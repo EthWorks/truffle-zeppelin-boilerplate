@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node2",
+            "request": "launch",
+            "protocol" : "inspector",
+            "name": "Truffle test",
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/node_modules/.bin/truffle",
+            "args": [
+                "test"
+            ]
+        }
+    ]
+}
