@@ -3046,6 +3046,6 @@ yargs@~3.10.0:
     decamelize "^1.0.0"
     window-size "0.1.0"
 
-"zeppelin-solidity@git+ssh://git@github.com:OpenZeppelin/zeppelin-solidity.git":
+"zeppelin-solidity@https://github.com/OpenZeppelin/zeppelin-solidity.git":
   version "1.3.0"
-  resolved "git+ssh://git@github.com:OpenZeppelin/zeppelin-solidity.git#d919f0dde223c90a4f85ddd5ccdd2b36e1d4a259"
+  resolved "https://github.com/OpenZeppelin/zeppelin-solidity.git#db5a12cfddeff2e96bb6c3259c7a7b0702444c5d"

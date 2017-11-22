@@ -4,9 +4,9 @@
   "main": "truffle.js",
   "license": "MIT",
   "scripts": {
-    "truffle:testrpc": "testrpc",
-    "truffle:compile": "truffle compile",
-    "truffle:test": "truffle test"
+    "dev:testrpc": "testrpc",
+    "dev:compile": "truffle compile",
+    "dev:test": "truffle test"
   },
   "devDependencies": {
     "babel-polyfill": "^6.26.0",
@@ -17,6 +17,6 @@
     "babel-register": "^6.26.0",
     "ethereumjs-testrpc": "^6.0.2",
     "truffle": "^4.0.1",
-    "zeppelin-solidity": "git+ssh://git@github.com:OpenZeppelin/zeppelin-solidity.git"
+    "zeppelin-solidity": "https://github.com/OpenZeppelin/zeppelin-solidity.git"
   }
 }
