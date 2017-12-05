@@ -4,9 +4,11 @@
   "main": "truffle.js",
   "license": "MIT",
   "scripts": {
+    "dev": "lite-server",
     "dev:testrpc": "testrpc",
     "dev:compile": "truffle compile",
-    "dev:test": "truffle test"
+    "dev:test": "truffle test",
+    "dev:migrate": "truffle migrate --reset"
   },
   "devDependencies": {
     "babel-polyfill": "^6.26.0",
@@ -17,6 +19,7 @@
     "babel-register": "^6.26.0",
     "ethereumjs-testrpc": "^6.0.2",
     "truffle": "^4.0.1",
-    "zeppelin-solidity": "https://github.com/OpenZeppelin/zeppelin-solidity.git"
+    "zeppelin-solidity": "https://github.com/OpenZeppelin/zeppelin-solidity.git",
+    "lite-server": "^2.3.0"
   }
 }

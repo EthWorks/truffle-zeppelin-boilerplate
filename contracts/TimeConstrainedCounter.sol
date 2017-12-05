@@ -7,7 +7,6 @@ contract TimeConstrainedCounter {
   uint256 public endTime;
 
   function TimeConstrainedCounter(uint256 _startTime, uint256 _endTime) public {
-    require(_startTime >= now);
     require(_endTime >= _startTime);
 
     startTime = _startTime;
