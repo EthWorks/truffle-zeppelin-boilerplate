@@ -6,20 +6,32 @@
   "scripts": {
     "dev": "lite-server",
     "dev:testrpc": "testrpc",
-    "dev:compile": "truffle compile",
-    "dev:test": "truffle test",
-    "dev:migrate": "truffle migrate --reset"
+    "compile": "truffle compile --all",
+    "dev:test": "truffle compile --all && mocha --require test/testPolyfill.js --require babel-polyfill --require babel-register --recursive test/unitTests/",
+    "deploy": "mocha --require test/testPolyfill.js --require babel-polyfill --require babel-register scripts/deploy.js"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.39",
+    "@babel/preset-env": "^7.0.0-beta.39",
+    "babel-cli": "^6.26.0",
+    "babel-node-modules": "^0.0.1",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2016": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
     "babel-register": "^6.26.0",
+    "bn-chai": "^1.0.1",
+    "chai": "^4.1.2",
     "ethereumjs-testrpc": "^6.0.2",
-    "truffle": "^4.0.1",
-    "zeppelin-solidity": "https://github.com/OpenZeppelin/zeppelin-solidity.git",
+    "ganache-core": "^2.0.2",
+    "mocha": "^4.0.1",
+    "solc": "^0.4.19",
+    "truffle": "^4.1.5",
+    "web3": "^1.0.0-beta.29",
+    "zeppelin-solidity": "1.6.0",
+    "ethworks-solidity": "Ethworks/ethworks-solidity#920cb175e0273c076243823b4f403467d39223ee",
     "lite-server": "^2.3.0"
   }
 }
