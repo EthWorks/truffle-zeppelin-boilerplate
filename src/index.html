@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Time Constrained Counter</title>
+    <title>Escrow</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -21,7 +21,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-8 col-sm-push-2">
-          <h1 class="text-center">Time Constrained Counter</h1>
+          <h1 class="text-center">Escrow contract</h1>
           <hr/>
           <br/>
         </div>
@@ -31,11 +31,21 @@
         <div class="col-sm-6 col-sm-push-3 col-md-4 col-md-push-4">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Counter</h3>
+              <h3 class="panel-title">Contract address</h3>
             </div>
             <div class="panel-body">
-              <h4>Value: <span id="CounterBalance"> </span> <br/><br/> </h4>
-              <button class="btn btn-primary" id="IncreaseButton" type="button">Increase</button>
+                <input class="form-control" id="contractAddressInput" type="text"></input>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Data</h3>
+            </div>
+            <div class="panel-body">
+              <h4>Balance: <span id="EscrowBalance"> </span> <br/><br/> </h4>
+              <h4>Price: <span id="Price"> </span> <br/><br/> </h4>
+              <button class="btn btn-primary" id="ReadDataButton" type="button">Read</button>
             </div>
           </div>
         </div>

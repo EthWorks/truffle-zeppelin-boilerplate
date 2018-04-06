@@ -8,7 +8,7 @@ const {expect} = chai;
 const web3 = createWeb3(Web3);
 chai.use(bnChai(web3.utils.BN));
 
-describe('TimeConstrainedCounter', async() => {
+xdescribe('TimeConstrainedCounter', async() => {
   let contract;
   let beginTime;
   let endTime;

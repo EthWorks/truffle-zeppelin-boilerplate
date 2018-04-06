@@ -20,63 +20,35 @@ App = {
   },
 
   initContract: function() {
-    $.getJSON('TimeConstrainedCounter.json', function(data) {
+    $.getJSON('Escrow.json', function(data) {
       // Get the necessary contract artifact file and instantiate it with truffle-contract.
-      var TimeConstrainedCounterArtifact = data;
-      App.contracts.TimeConstrainedCounter = TruffleContract(TimeConstrainedCounterArtifact);
+      var EscrowArtifact = data;
+      App.contracts.Escrow = TruffleContract(EscrowArtifact);
 
       // Set the provider for our contract.
-      App.contracts.TimeConstrainedCounter.setProvider(App.web3Provider);
-      // Use our contract to retieve and mark the adopted pets.
-      return App.getValue();
+      App.contracts.Escrow.setProvider(App.web3Provider);
     });
 
     return App.bindEvents();
   },
 
   bindEvents: function() {    
-    $('#IncreaseButton').on('click', App.handleIncrement);
+    $('#ConfirmPurchaseButton').on('click', App.handleConfirmPurchase);
+    $('#ReadDataButton').on('click', App.handleReadData);
   },
 
-  handleIncrement: function(event) {
+  handleReadData: function(event) {
     event.preventDefault();
-    var timeConstrainedCounterInstance;
-
-    web3.eth.getAccounts(function(error, accounts) {
-      if (error) {
-        console.log(error);
-      } 
-
-      var account = accounts[0];
-
-      App.contracts.TimeConstrainedCounter.deployed().then(function(instance) {
-        timeConstrainedCounterInstance = instance;
-        return timeConstrainedCounterInstance.increment({from: account});
-      }).then(function(result) {
-        alert('Transfer Successful!');
-        return App.getValue();
-      }).catch(function(err) {
-        console.log(err.message);
-      });
+    const addr = $('#contractAddressInput').val();
+    web3.eth.getBalance(addr, function (err, result) {
+      $('#EscrowBalance').text(result);
     });
-  },
-
-  getValue: function(adopters, account) {
-    console.log('Getting value...');
-    var timeConstrainedCounterInstance;
-
-    App.contracts.TimeConstrainedCounter.deployed().then(function(instance) {
-      timeConstrainedCounterInstance = instance;
-
-      return timeConstrainedCounterInstance.value();
-    }).then(function(result) {      
-      balance = result.c[0];
-
-      $('#CounterBalance').text(balance);
-    }).catch(function(err) {
+    App.contracts.Escrow.at(addr).then(function(instance) {
+      instance.price().then(function (result) {$('#Price').text(result);});
+    })
+    .catch(function(err) {
       console.log(err.message);
     });
-
   }
 
 };
