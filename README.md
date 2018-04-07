@@ -11,7 +11,7 @@ You will need the following to be installed on your system:
 - Node.js (8.2+)
 - Yarn (1.3.2+)
 
-_Note: we recomand to always stick with the newest stable version of node and yarn_ 
+_Note: we recommend to always stick with the newest stable version of node and yarn_ 
 
 ## Install
 
@@ -31,15 +31,15 @@ _Note: All packages will be installed locally. Use `yarn truffle` to get access 
 
 ## Running tests
 
-1. [Optional] Start the TestRPC mock ethereum client if you don't have a client configured for testing.
+1. [Optional] Start the Ganache CLI mock ethereum client if you don't have a client configured for testing.
 
 _Note: please run this in a separate console_
 
 ```
-yarn run dev:testrpc
+yarn run dev:ganache
 ```
 
-2. Start the TestRPC mock ethereum client if you don't have a client configured for testing
+2. Run tests
 
 ```
 yarn run dev:test
